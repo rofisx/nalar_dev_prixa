@@ -11,6 +11,23 @@
         />
       </router-link>
     </Navbar>
+    <div class="d-sm-block d-md-none" style="margin-bottom: -75px;">
+      <div class="container px-0 mt-5">
+        <div class="row mt-5">
+          <div class="col mt-4">
+            <p class="fw-bold h2 text-primary2 text-center">Teman Sehatmu</p>
+            <p
+              class="text-secondary fn-12 text-center px-5"
+            >Hadir menemani setiap langkahmu menuju hidup yang lebih sehat.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <router-link to="/login" class="btn btn-primary px-3 rounded-5 text-white fw-bold">Masuk</router-link>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row px-4 mt-5">
       <div class="col-md-6">
         <router-link to="/ask_method">

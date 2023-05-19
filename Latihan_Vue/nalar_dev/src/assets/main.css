@@ -5,13 +5,6 @@
 a{
   text-decoration: none !important;
 }
-.modal-dialog {
-  position:fixed !important;
-  top:auto;
-  right:auto;
-  left:auto;
-  bottom:0;
-}  
 .shadow-bottom{
   box-shadow: 0 1.5px 1px -1px gray !important;
 }

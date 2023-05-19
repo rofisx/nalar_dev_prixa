@@ -45,8 +45,8 @@
     >
       <div class="modal-dialog modal-dialog-centered" style="align-items: flex-end;">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Masuk</h5>
+          <div class="modal-header py-1">
+            <h5 class="text-primary2 mt-2 fw-bold fn-11 text-center" style="margin-left: 40%;">Masuk</h5>
             <button type="button" class="btn-close" @click="OpenCloseFun()" aria-label="Close"></button>
           </div>
           <div class="modal-body">

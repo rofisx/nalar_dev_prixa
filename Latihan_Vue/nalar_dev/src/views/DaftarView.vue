@@ -68,7 +68,7 @@
               Dengan mendaftarkan akun, Anda menyetujui
               <br />
               <div class="fn-9">
-                <em class="text-primary">Syarat dan Ketentuan</em> yang berlaku dari Prixa
+                <em @click="OpenCloseFun()" class="text-primary">Syarat dan Ketentuan</em> yang berlaku dari Prixa
               </div>
             </div>
 
@@ -82,15 +82,82 @@
           </form>
         </div>
       </div>
+      <!-- Modal -->
+      <div
+        v-if="OpenClose"
+        class="modal fade show"
+        tabindex="-1"
+        aria-hidden="true"
+        aria-labelledby="exampleModalLabel"
+        role="dialog"
+        style="display: block;"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" style="align-items: flex-end;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary2">Syarat dan Ketentuan</h5>
+              <button type="button" class="btn-close" @click="OpenCloseFun()" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Fitur ini tidak dapat digunakan untuk
+              mendapatkan kepastian diagnosis pribadi
+              penyakit atau kondisi yang sedang Anda derita.
+              <br />
+              <br />Percakapan dalam fitur ini tidak dapat
+              menggantikan konsultasi dengan dokter
+              secara langsung maupun dalam pemberian obat.
+              <br />
+              <br />Dokter kami tidak menegakkan diagnosis
+              dan tidak memberikan resep obat.
+              <br />
+              <br />Platform ini hanya memberikan
+              kemungkinan-kemungkinan penyakit/kondisi
+              tertentu yang dapat terjadi serta saran
+              mengenai penanganan awal atau edukasi.
+              <br />
+              <br />Untuk kondisi darurat seperti,
+              namun tidak terbatas pada: nyeri kepala hebat,
+              nyeri dada hebat, sesak napas berat, gejala stroke,
+              dan penurunan kesadaran, kami sarankan untuk
+              segera mencari pertolongan ke Instalasi/Unit
+              Gawat Darurat Rumah Sakit terdekat.
+              <br />
+              <br />Dengan mendaftar dan/atau
+              menggunakan situs www.prixa.ai,
+              maka pengguna dianggap telah menyetujui
+              seluruh syarat dan ketentuan yang berlaku.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
     </div>
   </div>
 </template>
 <script>
 import Navbar from "../components/Navbar.vue";
+import ModalDialog from "../components/ModalDialog.vue";
 
 export default {
   name: "Daftar",
-  components: { Navbar }
+  components: {
+    Navbar,
+    ModalDialog
+  },
+  props: {
+    visible: Boolean,
+    variant: String
+  },
+  data() {
+    return {
+      OpenClose: this.visible
+    };
+  },
+  methods: {
+    OpenCloseFun() {
+      this.OpenClose = !this.OpenClose;
+    }
+  }
 };
 </script>
 <style>
